@@ -15,11 +15,11 @@ import java.util.zip.Inflater;
  * Created by IncludeTV on 2016-11-05.
  */
 
-public class RoomListAdapter extends ArrayAdapter<MainActivity.Room>{
-    private ArrayList<MainActivity.Room> items;
+public class RoomListAdapter extends ArrayAdapter<Room>{
+    private ArrayList<Room> items;
     Context context;
 
-    public RoomListAdapter(Context context, int resourceId, ArrayList<MainActivity.Room> l) {
+    public RoomListAdapter(Context context, int resourceId, ArrayList<Room> l) {
         super(context,resourceId,l);
         this.context=context;
         this.items=l;
@@ -32,7 +32,7 @@ public class RoomListAdapter extends ArrayAdapter<MainActivity.Room>{
             LayoutInflater vi = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = vi.inflate(R.layout.room_list_item, null);
         }
-        MainActivity.Room item=items.get(position);
+        Room item=items.get(position);
         TextView mealTextView = (TextView)convertView.findViewById(R.id.textViewMeal);
         String mealText="";
         switch(item.meal) {
