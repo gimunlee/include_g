@@ -38,6 +38,10 @@ public class Room {
             this.place=place;
             partyIndex=-1;
         }
+
+        public int getTime(){
+            return time;
+        }
     }
 }
 
