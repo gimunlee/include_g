@@ -10,16 +10,14 @@ public class Room {
     Meal meal;
     Location location;
     int count;
-    ArrayList<Member> members;
     public Room(Meal _meal, Location _location, int _count) {
         meal=_meal;
         location=_location;
         count=_count;
-        members=new ArrayList<>();
     }
 
+
     public void addMember(String name, int time, String place){
-        members.add(new Member(name, time, place));
 //        for(int i=0;i<members.size();i++) {
 //            if(members.)
 //        }

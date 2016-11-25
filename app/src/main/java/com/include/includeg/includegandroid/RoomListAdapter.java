@@ -24,7 +24,9 @@ public class RoomListAdapter extends ArrayAdapter<Room>{
         this.context=context;
         this.items=l;
     }
-
+    public void clear(){
+        items.clear();
+    }
     @NonNull
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -34,14 +36,22 @@ public class RoomListAdapter extends ArrayAdapter<Room>{
         }
         Room item=items.get(position);
         TextView mealTextView = (TextView)convertView.findViewById(R.id.textViewMeal);
+        TextView locationTextView = (TextView)convertView.findViewById(R.id.textViewLocation);
         String mealText="";
+        String locationText="";
         switch(item.meal) {
             case Lunch : mealText="점심"; break;
             case Breakfast: mealText="아침"; break;
             case Dinner: mealText="저녁"; break;
             case Yasik: mealText="야식"; break;
         }
+        switch(item.location){
+            case North : locationText="북측"; break;
+            case East : locationText="동측"; break;
+            case West : locationText="서측"; break;
+        }
         mealTextView.setText(mealText);
+        locationTextView.setText(locationText);
         return convertView;
     }
 }

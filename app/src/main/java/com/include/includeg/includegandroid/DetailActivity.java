@@ -21,6 +21,8 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         Intent myIntent = getIntent();
         int roomListNum = myIntent.getIntExtra("room number",0);
@@ -59,7 +61,7 @@ public class DetailActivity extends AppCompatActivity {
         };
 
 
-        Collections.sort(mRoom.members, sort);
+//        Collections.sort(mRoom.members, sort);
         TextView time = (TextView)findViewById(R.id.time_TextView);
         time.setText("1600");
         TextView place =(TextView)findViewById(R.id.place_TextView);
@@ -67,14 +69,14 @@ public class DetailActivity extends AppCompatActivity {
 
         if(mRoom!=null){
             ListView partyListView = (ListView) findViewById(R.id.party_ListView);
-            PartyListViewAdapter partyAdapter = new PartyListViewAdapter(this,R.layout.party_list_item, mRoom.members);
-            partyListView.setAdapter(partyAdapter);
+//            PartyListViewAdapter partyAdapter = new PartyListViewAdapter(this,R.layout.party_list_item, mRoom.members);
+//            partyListView.setAdapter(partyAdapter);
         }
 
         if(mRoom!=null) {
             ListView memberListView = (ListView) findViewById(R.id.member_ListView);
-            MemberListViewAdapter memberAdapter = new MemberListViewAdapter(this, R.layout.member_list_item, mRoom.members);
-            memberListView.setAdapter(memberAdapter);
+//            MemberListViewAdapter memberAdapter = new MemberListViewAdapter(this, R.layout.member_list_item, mRoom.members);
+//            memberListView.setAdapter(memberAdapter);
         }
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
